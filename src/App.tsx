@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { css } from '@emotion/react'
 import logo from './logo.svg'
 import './App.css'
+import './common.scss'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +13,8 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>
         <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
+          <button css={css`background-color: lightblue; border: none`} type="button"
+                  onClick={() => setCount((count) => count + 1)}>
             count is: {count}
           </button>
         </p>
