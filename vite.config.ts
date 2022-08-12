@@ -1,11 +1,18 @@
 import { defineConfig } from 'vite'
 import { fileURLToPath, URL } from 'node:url'
-import { createHtmlPlugin } from 'vite-plugin-html'
 import svgr from 'vite-plugin-svgr'
 import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  root: './src',
+  publicDir: '../public',
+
+  build: {
+    outDir: '../dist',
+    emptyOutDir: true,
+  },
+
   plugins: [
     react(
       {
@@ -17,11 +24,6 @@ export default defineConfig({
     ),
 
     svgr(),
-
-    createHtmlPlugin({
-      entry: '/src/main.tsx',
-      template: 'public/index.html',
-    })
   ],
 
   resolve: {
