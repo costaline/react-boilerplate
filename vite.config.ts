@@ -1,38 +1,39 @@
-import { defineConfig } from 'vite'
 import { fileURLToPath, URL } from 'node:url'
-import svgr from 'vite-plugin-svgr'
 import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
+import eslint from 'vite-plugin-eslint'
+import svgr from 'vite-plugin-svgr'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root: './src',
-  publicDir: '../public',
+	root: './src',
+	publicDir: '../public',
 
-  build: {
-    outDir: '../dist',
-    emptyOutDir: true,
-  },
+	build: {
+		outDir: '../dist',
+		emptyOutDir: true,
+	},
 
-  plugins: [
-    react(
-      {
-        jsxImportSource: '@emotion/react',
-        babel: {
-          plugins: ['@emotion/babel-plugin']
-        }
-      }
-    ),
+	plugins: [
+		eslint(),
 
-    svgr(),
-  ],
+		react({
+			jsxImportSource: '@emotion/react',
+			babel: {
+				plugins: ['@emotion/babel-plugin'],
+			},
+		}),
 
-  resolve: {
-    alias: {
-      '@@': fileURLToPath(new URL('./src', import.meta.url)),
-    },
-  },
+		svgr(),
+	],
 
-  css: {
-    devSourcemap: true
-  }
+	resolve: {
+		alias: {
+			'@@': fileURLToPath(new URL('./src', import.meta.url)),
+		},
+	},
+
+	css: {
+		devSourcemap: true,
+	},
 })
