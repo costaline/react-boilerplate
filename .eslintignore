@@ -1,3 +1,10 @@
+build
+dist
 public
+
+/__mocks__
+/coverage
+/cypress
+/*.*
 
 src/**/*.generated.ts

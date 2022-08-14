@@ -4,7 +4,7 @@ import { css } from '@emotion/react'
 import '@@/App.css'
 import { ReactComponent as ReactLogo } from '@@/assets/react.svg'
 
-function App() {
+export const App = (): JSX.Element => {
 	const [count, setCount] = useState(0)
 
 	return (
@@ -21,6 +21,7 @@ function App() {
 				css={css`
 					text-decoration: underline;
 				`}
+				data-testid="title"
 			>
 				Vite + React
 			</h1>
