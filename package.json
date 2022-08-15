@@ -22,7 +22,9 @@
     "test:e2e:ci": "start-server-and-test serve http://127.0.0.1:3000/ 'cypress run'",
     "test:unit": "jest --watch",
     "test:unit:ci": "jest --passWithNoTests",
-    "test:unit:coverage": "jest --silent --watchAll=false --coverage"
+    "test:unit:coverage": "jest --silent --watchAll=false --coverage",
+    "storybook": "start-storybook -p 6006 --no-open",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@emotion/react": "^11.10.0",
@@ -31,10 +33,18 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.10",
     "@cypress/vite-dev-server": "^3.1.0",
     "@emotion/babel-plugin": "^11.10.0",
     "@emotion/jest": "^11.10.0",
     "@rushstack/eslint-patch": "^1.1.4",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-vite": "^0.2.2",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
     "@stylelint/postcss-css-in-js": "^0.38.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
@@ -47,6 +57,7 @@
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
     "@vitejs/plugin-react": "^2.0.1",
+    "babel-loader": "^8.2.5",
     "cypress": "^10.4.0",
     "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",

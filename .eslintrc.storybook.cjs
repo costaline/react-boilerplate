@@ -1,5 +1,7 @@
 module.exports = {
 	extends: ['plugin:storybook/recommended'],
 
-	rules: {},
+	rules: {
+		'@typescript-eslint/consistent-type-assertions': 'off',
+	},
 }

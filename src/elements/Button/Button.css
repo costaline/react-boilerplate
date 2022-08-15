@@ -1,0 +1,9 @@
+.button {
+	overflow: hidden;
+
+	color: white;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+	background-color: darkcyan;
+}
